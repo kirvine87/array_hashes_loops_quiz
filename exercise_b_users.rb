@@ -54,6 +54,61 @@ users = {
   }
 }
 
+#1
+p users["Jonathan"][:twitter]
+
+#2
+p users["Erik"][:home_town]
+
+#3
+p users["Erik"][:lottery_numbers]
+
+#4
+p users["Avril"][:pets][0][:species]
+
+#5
+smallest = users["Erik"][:lottery_numbers]
+min = smallest.min
+smallest_number = smallest.select { |i| i == min}
+p smallest_number
+
+#6
+numbers = users["Avril"][:lottery_numbers]
+new_array = []
+for number in numbers
+  if (number % 2 == 0)
+    new_array << number
+  end
+end
+p new_array
+
+#7
+users["Erik"][:lottery_numbers].push(7)
+p users["Erik"][:lottery_numbers]
+
+#8
+users["Erik"][:hometown] = "Edinburgh"
+p users["Erik"][:hometown]
+
+#9
+users["Erik"][:pets].push({name:"Fluffy", species: "Dog"})
+p users["Erik"][:pets]
+
+#10
+users = {"Kevin" => {
+  :twitter => "BigKev",
+  :lottery_numbers => [6, 4, 56, 37, 42, 29],
+  :home_town => "Glasgow",
+  :pets => [
+    {
+      :name => "Gary",
+      :species => "Snail"
+    }
+  ]
+}
+}
+  p users
+
 # 1. Get Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
 # 2. Get Erik's hometown
 # 3. Get the array of Erik's lottery numbers
